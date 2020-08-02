@@ -14,22 +14,25 @@ def ShowGraph():
     print(fdict, type(fdict))
     if fdict:
         plt.plot(fdict.keys(), fdict.values())
+        plt.xlabel("Intervals")
+        plt.ylabel("Speeds in Mbps")
         plt.show()
     else:
         pass
 
-
+#Button which on press calls ShowGraph function
 Toggle = tk.Button(window,
         text="Show Graph of speeds",
         width=50,
         command = ShowGraph,)
 
+#List of all files in JSON folder
 Filenames = tk.Label(window,
         text="\n".join(os.listdir("./JSON")))
 
+#Textbox to put filename in
 FileLabel = tk.Label(window,
         text="Filename:")
-
 File = tk.Entry(window)
 
 
